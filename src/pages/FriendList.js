@@ -1,0 +1,83 @@
+import { useEffect, useState } from "react";
+import Layout from "../components/Layout"
+import axios from "axios";
+import { apiUrl, imageUrl } from "../util/api";
+import avatar from '../assets/images/avatar.png';
+
+const FriendList = () => {
+    const [users, setUsers] = useState([]);
+    const [listCount, setListCount] = useState(0);
+    const fetchUsers = async () => {
+        try {
+            const res = await axios.get(`${apiUrl}/users/getfriendlist`);
+            if (res.data.status === 200) {
+                setUsers(res.data.users);
+                setListCount(res.data.count);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const handleUnfriend = async (id) => {
+        try {
+            const res = await axios.post(`${apiUrl}/users/unfriend`, {
+                id: id
+            });
+            if (res.data.status === 200) {
+                window.location.reload();
+            } 
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        fetchUsers();
+        const interval = setInterval(() => {
+            fetchUsers();
+        }, 2000);
+        return () => {
+            clearInterval(interval);
+        }
+    }, []);
+    return (
+        <Layout menuactive={"friendlist"} friendlistCount={listCount}>
+            <div className="container-fluid">
+                {
+                    users.length > 0 ?
+                    <div className="row">
+                        {
+                            users.map((el, index) => {
+                                return (
+                                    <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12" key={index}>
+                                        <div className="card shadow">
+                                            <div className="card-header">
+                                                <p className="mb-0">ID: <strong>{el._id}</strong></p>
+                                            </div>
+                                            <div className="card-body">
+                                                <div className="d-flex align-items-center">
+                                                    <i className="profile-avatar">
+                                                        <img src={el.image ? `${imageUrl}/uploads/users/${el.image}` : avatar} alt="avatar"/>
+                                                    </i>
+                                                    <div className="flex-grow-1 pl-2">
+                                                        <h6 className="mb-0">{el.name}</h6>
+                                                        <p className="mb-0">Level: {el.level}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="card-footer">
+                                                <div className="d-flex gap-2 justify-content-end">
+                                                    <button className="btn btn-danger" onClick={() => handleUnfriend(el._id)}>Unfriend</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div> : <p>No Friends Found</p>
+                }
+            </div>
+        </Layout>
+    )
+}
+export default FriendList;

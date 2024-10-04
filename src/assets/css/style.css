@@ -1,0 +1,242 @@
+body {
+    font-family: 'AdobeClean-Regular';
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--body-color);
+}
+.application-brand {
+    display: inline-block;
+    width: 25px;
+    height: 23px;
+}
+.application-brand img {
+    max-width: 100%;
+}
+.sidebar-toogler {
+    display: block;
+    padding: 0px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.sidebar-toogler .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #06264c;
+    margin: 3px 0;
+    border-radius: 60px;
+}
+.application-sidebar {
+    width: 260px;
+    transition: 0.3s ease-in-out;
+    left: -260px;
+}
+.application-sidebar.show {
+    left: 0;
+}
+.application-sidebar-nav li {
+    margin-top: 10px;
+}
+.application-sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+    color: #fff;
+    font-family: 'AdobeClean-Bold';
+    border-radius: 5px;
+}
+.application-sidebar-link:hover, .application-sidebar-link.active {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+.application-sidebar-link i {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+.application-sidebar-link span {
+    flex: 1;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+.application-sidebar-link .capsule {
+    width: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-style: normal;
+    height: 30px;
+    border-radius: 100%;
+}
+.application-main-content {
+    padding-left: 0px;
+    padding-top: 73px;
+    min-height: 100vh;
+    overflow: auto;
+    transition: 0.3s ease-in-out;
+}
+.application-main-content.collapse {
+    padding-left: 260px;
+}
+.profile-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-name {
+    color: #ffff;
+    font-family: 'AdobeClean-Bold';
+}
+.profile-settings {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0px;
+    cursor: pointer;
+}
+.application-menu-slide {
+    width: 300px;
+    z-index: 10;
+    transition: 0.3s ease-in-out;
+    right: -300px;
+}
+.application-menu-slide.show {
+    right: 0;
+}
+.slide-menu-backdrop {
+    background-color: rgba(0, 0, 0, 0.42);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+.slide-menu-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+.Toastify__toast-body {
+    font-size: 12px;
+    line-height: 17px;
+}
+.applicationheader-usersearch {
+    max-height: 400px;
+    top: 100%;
+    overflow: auto;
+}
+.application-viewprofile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.application-viewprofile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user-link:hover {
+    background-color: #ddd;
+}
+.option-box-image {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.select2-container .select2-selection--single {
+    height: auto !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding: .55rem 1rem !important;
+    color: var(--dark-color);
+    line-height: 21px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 10px !important;
+}
+.notification-flag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--danger-color);
+    border-radius: 50%;
+}
+.absolute-btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+/*PRELOADER*/
+.loader {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader span {
+    width: 6px;
+    height: 25px;
+    margin: 0 7px;
+    background: #00A7E1;
+    animation: animate 2s linear infinite;
+}
+
+.loader span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loader span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.loader span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.loader span:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+@keyframes animate 
+{
+    0% {
+        box-shadow: 0 0 0 rgba(0,0,0,0.5);
+        opacity: 0;
+        transform: translateX(-30px) scale(1);
+    }
+    50% {
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        opacity: 1;
+        transform: translateX(0px) scale(1.2);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0,0,0,0.5);
+        opacity: 0;
+        transform: translateX(30px) scale(1);
+    }
+}

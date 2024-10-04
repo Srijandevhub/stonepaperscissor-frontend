@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'AdobeClean-Regular';
+  src: url('../fonts/AdobeClean-Regular.eot');
+  src: url('../fonts/AdobeClean-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/AdobeClean-Regular.woff2') format('woff2'),
+      url('../fonts/AdobeClean-Regular.woff') format('woff'),
+      url('../fonts/AdobeClean-Regular.ttf') format('truetype'),
+      url('../fonts/AdobeClean-Regular.svg#AdobeClean-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AdobeClean-Bold';
+  src: url('../fonts/AdobeClean-Bold.eot');
+  src: url('../fonts/AdobeClean-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/AdobeClean-Bold.woff2') format('woff2'),
+      url('../fonts/AdobeClean-Bold.woff') format('woff'),
+      url('../fonts/AdobeClean-Bold.ttf') format('truetype'),
+      url('../fonts/AdobeClean-Bold.svg#AdobeClean-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AdobeClean-ExtraBold';
+  src: url('../fonts/AdobeClean-ExtraBold.eot');
+  src: url('../fonts/AdobeClean-ExtraBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/AdobeClean-ExtraBold.woff2') format('woff2'),
+      url('../fonts/AdobeClean-ExtraBold.woff') format('woff'),
+      url('../fonts/AdobeClean-ExtraBold.ttf') format('truetype'),
+      url('../fonts/AdobeClean-ExtraBold.svg#AdobeClean-ExtraBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

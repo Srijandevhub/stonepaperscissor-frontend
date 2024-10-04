@@ -1,0 +1,12 @@
+.move-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    max-width: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.move-btn img {
+    max-width: 30px;
+}
